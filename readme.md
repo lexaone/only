@@ -9,11 +9,14 @@ I borrowed the idea of this program from https://github.com/IGLOU-EU/onlyKeySetT
 
 ##How to compile:
 - install hidapi library:
+```
 	apt install libhidapi-dev
+```
 - clone this repository
 - compile it 
-	zig build -Drelease-small 
-	strip zig-cache/bin/only (optional)
-
+```
+	zig build -Drelease-small ;
+	strip zig-cache/bin/only #optional
+```
 works on Linux mint 20.1 with hidapi ver 0.9.0+dfsg-1 installed
 compiled with the latest ver of Zig (0.8.0-dev.1401+34ca6b7b4)
