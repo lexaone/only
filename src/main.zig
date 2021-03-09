@@ -34,7 +34,10 @@ fn setTime(devpath: [*:0]u8) anyerror!void {
     }
     defer c.hid_close(device_handle);
 
-    _ = c.hid_write(device_handle, &data, data.len);
+    if (c.hid_write(device_handle, &data, data.len) == 0) {
+        try stderr.print("Unable to open device {s}\n", .{devpath});
+        std.os.exit(1);
+    }
 }
 
 pub fn main() anyerror!void {
