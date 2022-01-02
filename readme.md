@@ -15,8 +15,8 @@ I borrowed the idea of this program from https://github.com/IGLOU-EU/onlyKeySetT
 - clone this repository
 - compile it: 
 ```
-	zig build -Drelease-small
-	strip zig-cache/bin/only #optional
+	zig build 
+	strip zig-out/bin/only
 ```
 ## Works on Linux mint 20.1 with hidapi ver 0.9.0+dfsg-1 installed
 ## Compiled with the latest master branch ver of Zig (0.10.0-dev.80+042b770d6)
