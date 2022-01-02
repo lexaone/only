@@ -12,7 +12,9 @@ const c = @cImport({
     @cInclude("hidapi/hidapi.h");
 });
 
-//function open usb device by path and set current time
+//function open usb device and set current time
+//@param devpath - device file to open
+//@return - nothing 
 fn setTime(devpath: [*:0]u8) anyerror!void {
 
     //first 5 bytes is the header

@@ -9,12 +9,15 @@ pub fn build(b: *Builder) void {
 
     // Standard release options allow the person running `zig build` to select
     // between Debug, ReleaseSafe, ReleaseFast, and ReleaseSmall.
-    const mode = b.standardReleaseOptions();
+    // const mode = b.standardReleaseOptions();
 
     const exe = b.addExecutable("only", "src/main.zig");
+    exe.strip = true;
+    exe.single_threaded = true;
     exe.setTarget(target);
-    exe.setBuildMode(mode);
-    exe.linkSystemLibrary("c");
+    exe.setBuildMode(.ReleaseSmall);
+    //    exe.linkSystemLibrary("c");
+    exe.linkLibC();
     exe.linkSystemLibrary("hidapi-hidraw");
 
     exe.install();
